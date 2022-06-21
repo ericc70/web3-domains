@@ -30,9 +30,7 @@ contract Domains is ERC721URIStorage {
 
     address payable public owner;
 
-    constructor(string memory _tld)
-        payable
-        ERC721("Domains Service", "DSS")
+    constructor(string memory _tld) payable ERC721("Domains Sun Service", "DSS")
     {
         owner = payable(msg.sender);
         tld = _tld;
@@ -67,7 +65,7 @@ contract Domains is ERC721URIStorage {
             abi.encodePacked(
                 '{"name": "',
                 _name,
-                '", "description": "A domain on the Eriks name service", "image": "data:image/svg+xml;base64,',
+                '", "description": "A domain on the Sun name service", "image": "data:image/svg+xml;base64,',
                 Base64.encode(bytes(finalSvg)),
                 '","length":"',
                 strLen,
