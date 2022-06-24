@@ -1,7 +1,4 @@
-<script setup>
-const TWITTER_HANDLE = "";
-const TWITTER_LINK = "";
-</script>
+
 
 <template>
   <div className="App">
@@ -16,7 +13,11 @@ const TWITTER_LINK = "";
       </div>
       <slot></slot>
 
-
+<footer>
+       <div>
+        <p> Blockchain : Polygon mumbai - Projet pédagogique aucun support, aucune maintenance.</p>
+    </div>
+</footer>
     </div>
   </div>
 </template>

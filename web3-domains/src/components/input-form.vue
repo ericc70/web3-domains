@@ -12,6 +12,7 @@
         Mint
       </button>
     </div>
+ 
   </div>
 </template>
 
@@ -22,8 +23,8 @@ import contractAbi from "../../../artifacts/contracts/Domains.sol/Domains";
 // import contract
 const domain = ref("");
 const reccord = ref("");
-const tld = ref("Sdomain");
-const CONTRACT_ADRESS = "";
+const tld = ref("SunDpmain");
+const CONTRACT_ADRESS = "0xf8e69C2c0394cbf99E9e02864ED2E835a2BdE58c";
 
 async function mintDomain() {
   if (!domain.value) {
@@ -34,7 +35,7 @@ async function mintDomain() {
     return;
   }
 
-  const price = domain.length == 3 ? "0.5" : domain.length == 4 ? "0.3" : "0.1";
+  const price = domain.value.length == 3 ? "0.5" : domain.value.length == 4 ? "0.3" : "0.1";
   console.log("minting domain", domain, "wirh price", price);
 
   try {
@@ -51,7 +52,7 @@ async function mintDomain() {
 
       console.log("talk to the wallet an pay gas");
 
-      let tx = await contract.register(domain, {
+      let tx = await contract.register(domain.value, {
         value: ethers.utils.parseEther(price),
       });
 
